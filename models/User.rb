@@ -1,5 +1,4 @@
 require "securerandom"
-require "digest/md5"
 
 class User < ActiveRecord::Base
   validate :mail, presence: true

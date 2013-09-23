@@ -1,0 +1,28 @@
+<%= partials "flash" %>
+
+<form method="POST" action="/signup">
+  <div class="ui form segment">
+    <div class="field">
+      <label>Mail</label>
+      <div class="ui left labeled icon input">
+        <input type="mail" name="mail">
+        <i class="mail icon"></i>
+      </div>
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <div class="ui left labeled icon input">
+        <input type="password" name="password">
+        <i class="lock icon"></i>
+      </div>
+    </div>
+    <div class="field">
+      <label>Password Confirmation</label>
+      <div class="ui left labeled icon input">
+        <input type="password" name="password_confirmation">
+        <i class="lock icon"></i>
+      </div>
+    </div>
+    <button class="ui red submit button">Login</button>
+  </div>
+</form>

@@ -1,0 +1,13 @@
+<% if flash.has_key? :success %>
+  <div class="ui success message">
+    <i class="icon close"></i>
+    <%= flash[:success] %>
+  </div>
+<% end %>
+
+<% if flash.has_key? :error %>
+  <div class="ui error message">
+    <i class="icon close"></i>
+    <%= flash[:error] %>
+  </div>
+<% end %>

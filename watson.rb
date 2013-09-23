@@ -3,6 +3,7 @@ require 'sinatra/activerecord'
 require 'sinatra/flash'
 
 require_relative "./models/User"
+require_relative "./helpers/authentification_helpers"
 
 class Watson < Sinatra::Base
   set :database, ENV["DATABASE_URL"]
@@ -16,13 +17,25 @@ class Watson < Sinatra::Base
   ActiveRecord::Base.include_root_in_json = false
 
   helpers do
+    include Sinatra::AuthentificationHelpers
+
     def partials(page, options = {})
       erb :"partials/#{page}", options.merge!(:layout => false)
     end
   end
 
+  before do
+    if !is_authenticated? && needs_autentification?(request.path)
+      redirect '/signin'
+    end
+  end
+
   get '/' do
-    redirect to('/signup')
+    if User.any?
+      redirect to("/lists")
+    else
+      redirect to("/signup")
+    end
   end
 
   get '/lists' do
@@ -32,3 +45,4 @@ class Watson < Sinatra::Base
 end
 
 require_relative "./controllers/user_controller"
+require_relative "./controllers/session_controller"

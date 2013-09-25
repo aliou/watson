@@ -2,7 +2,10 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/flash'
 
+require_relative "./models/List"
+require_relative "./models/Task"
 require_relative "./models/User"
+
 require_relative "./helpers/authentification_helpers"
 
 class Watson < Sinatra::Base
@@ -37,11 +40,6 @@ class Watson < Sinatra::Base
       redirect to("/signup")
     end
   end
-
-  get '/lists' do
-    "Authenticated!"
-  end
-
 end
 
 require_relative "./controllers/user_controller"

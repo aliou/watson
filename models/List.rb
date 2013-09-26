@@ -15,4 +15,18 @@ class List < ActiveRecord::Base
   def finished_tasks
     self.tasks.find_all {|t| t.finished?}
   end
+
+  def archive!
+    self.archived_at = Time.now
+    self.save!
+  end
+
+  def unarchive!
+    self.archived_at = nil
+    self.save!
+  end
+
+  def archived?
+    !self.archived_at.nil?
+  end
 end

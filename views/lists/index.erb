@@ -1,0 +1,11 @@
+<%= partials "flash" %>
+
+<h3>Your Lists</h1>
+<div class="ui divider"></div>
+<div class="ui divided list">
+  <% @lists.each do |l| %>
+    <div class="item">
+      <a href="/lists/<%= l.id %>"><%= l.name %></a>
+    </div>
+  <% end %>
+</div>

@@ -29,4 +29,8 @@ class List < ActiveRecord::Base
   def archived?
     !self.archived_at.nil?
   end
+
+  def count
+    self.tasks.count
+  end
 end

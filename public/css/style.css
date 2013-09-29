@@ -34,7 +34,17 @@ h1 {
   margin: 60px auto;
 }
 
+.ui.label.counter {
+  float: right;
+  font-size: 10px;
+}
+
 .header {
   font-size: 0.8em;
   margin-bottom: 9px;
+}
+
+a.list-title {
+  height: 30px;
+  line-height: 30px;
 }

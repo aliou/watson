@@ -1,0 +1,15 @@
+<%= partials "flash" %>
+
+<h3><%= @list.name %></h3>
+<div class="ui divider"></div>
+<div class="ui divided list">
+  <% @list.tasks.each do |t| %>
+    <div class="item">
+      <div class="ui checkbox">
+        <input type="checkbox"></input>
+        <div class="box"></div>
+      </div>
+      <%= t.text %>
+    </div>
+  <% end %>
+</div>

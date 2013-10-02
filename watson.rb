@@ -45,3 +45,4 @@ end
 require_relative "./controllers/user_controller"
 require_relative "./controllers/session_controller"
 require_relative "./controllers/list_controller"
+require_relative "./controllers/task_controller"
